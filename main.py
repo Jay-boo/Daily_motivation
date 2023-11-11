@@ -10,6 +10,7 @@ load_dotenv()
 API_KEY=os.getenv('API_KEY')
 
 
+
 def get_citation(category:str) ->Any |list[dict[str,str]]:
     api_url = f"https://api.api-ninjas.com/v1/quotes?category={category}"
     response = requests.get(api_url, headers={'X-Api-Key': f"{API_KEY}"})
@@ -34,14 +35,11 @@ if __name__ == "__main__":
     parser.read("config-api.ini")
     citation=get_citation(parser["api-call"].get("category"))
 
+    HOME=os.getenv("HOME")
     notification = notify2.Notification(
-        "Daily Motivation",
-                         citation["quote"],
-"notification-audio-next"
-                        )
+        summary="Daily 📚",
+        message=f"{citation['quote']}\n from {citation['author']} ",
+        icon=f"{HOME}/projects/daily_motiv/ressources/senssy_lee.png"
+    )
     notification.show()
 
-    # logging.info("Runnning Cron Job")
-    # logging.log(level=1,
-    #             msg="Hello from logging my dear")
-    # pass

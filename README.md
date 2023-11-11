@@ -1,5 +1,6 @@
-# Get every day a citation from a specified subject 
+# Daily Quotes
 
+Get every day a new citation popping in a notification
 
 
 
@@ -16,12 +17,18 @@ API_KEY= YOUR_API_KEY
 ```
 
 
-Launch as cron job using `gui_launcher.sh` and `get_citation.sh`
+
+Launch as cron job using `gui_launcher.sh`, `maintain_log_file` and `get_citation.sh`
 ```
 sudo apt install crontab
+chmod +x get_citation.sh
+chmod +x gui_launcher.sh
+chmod +x maintain_log_file.sh
 crontab crontab_files.sh
-
 ```
+
+You can choose your citation category, and modify it in the `config-api.ini`. Default category is "happiness"
+
 List of possibles categories :
 category (optional) - category to limit results to. Possible values are:
 

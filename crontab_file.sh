@@ -25,6 +25,6 @@
 # * * * * *    export DISPLAY=:0.0 && dbus-launch &&  /usr/bin/notify-send Hey "How are you" >> /home/jay/projects/daily_motiv/daily_job.log 2>&1
 # 
 
-* * * * * /home/jay/projects/daily_motiv/gui_launcher.sh "/home/jay/projects/daily_motiv/get_citation.sh" >> /home/jay/projects/daily_motiv/daily_job.log 2>&1
+30 9 * * * /home/jay/projects/daily_motiv/gui_launcher.sh "/home/jay/projects/daily_motiv/get_citation.sh" >> /home/jay/projects/daily_motiv/daily_job.log 2>&1
 
 
